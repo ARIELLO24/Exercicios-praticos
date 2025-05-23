@@ -5,11 +5,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home</title>
+    <link rel="stylesheet" href="/styles/styles.css">
 </head>
 
 <body>
 
-    <section>
+    <section class="Mp3">
         <h2>🎧 Episódio 1 – Introdução ao HTML5</h2>
         <audio controls preload="metadata">
             <source src="episodio1.mp3" type="audio/mpeg">
@@ -22,14 +23,14 @@
 
     </section>
 
-    <section>
+    <section class="Videos">
 
         <h2>📺 Vídeo 1 – Introdução ao CSS</h2>
         <video width="600" controls poster="thumbnail1.jpg">
             <source src="css-intro.mp4" type="video/mp4">
             <source src="css-intro.webm" type="video/webm">
             <p>Seu navegador não suporta vídeos HTML5.
-                <a href="css-intro.mp4">Baixe o vídeo</a>.
+                <a href="/assets/videoplayback.mp4">Baixe o vídeo</a>.
             </p>
         </video>
         <p>Descrição: Aula introdutória sobre o uso de CSS em páginas HTML.</p>
@@ -46,7 +47,7 @@
 
     </section>
 
-    <section>
+    <section class="Formulario">
 
         <h2>📤 Envie sua Foto de Perfil</h2>
         <form action="/upload" method="post" enctype="multipart/form-data">
@@ -58,7 +59,7 @@
 
     </section>
 
-    <section>
+    <section class="PaginaI">
 
         <h2>🌐 Localização da Empresa</h2>
         <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!..." width="600" height="450"
