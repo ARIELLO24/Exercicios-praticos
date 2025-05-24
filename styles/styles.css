@@ -1,5 +1,202 @@
-* {
+body {
+    cursor: url('/assets/sabre-de-luz.png'), auto;
+    margin: 0;
+    padding: 0;
+    font-family: 'Orbitron', sans-serif;
+    overflow-x: hidden;
+    color: #fff;
+}
+
+#espaco {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    background: linear-gradient(to bottom, #000000 0%, #1a1a2e 100%);
+}
+
+/* Menu de Navegação */
+.menu-navegacao {
+    background-color: rgba(0, 0, 0, 0.85);
+    backdrop-filter: blur(10px);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 15px rgba(255, 232, 31, 0.2);
+    border-bottom: 2px solid #ffe81f;
+}
+
+.menu-navegacao ul {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    padding: 15px 0;
+    margin: 0;
+}
+
+.menu-navegacao li {
+    margin: 0 20px;
+}
+
+.menu-navegacao a {
+    color: #ffe81f;
+    /* amarelo Star Wars */
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1.1rem;
+    font-family: 'Orbitron', sans-serif;
+    text-shadow: 0 0 5px #ffe81f, 0 0 10px #ffcf00;
+    transition: all 0.3s ease;
+    padding: 6px 12px;
+    border-radius: 5px;
+}
+
+.menu-navegacao a:hover {
+    color: black;
+    background-color: #ffe81f;
+    box-shadow: 0 0 10px #ffe81f;
+    transform: scale(1.05);
+}
+
+.star-wars {
+    display: flex;
+    justify-content: center;
+    padding: 2rem 0;
+}
+
+.star-wars img {
+    max-width: 80%;
+    height: auto;
+}
+
+.conteudo-principal {
+    padding-top: 70px;
+    padding-bottom: 50px;
+}
+
+/* Seções */
+.secao {
+    background-color: rgba(30, 30, 60, 0.8);
+    backdrop-filter: blur(8px);
+    border-radius: 15px;
+    padding: 50px;
+    margin: 50px auto;
+    max-width: 900px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.titulo-secao {
+    color: #4fc3f7;
+    border-bottom: 2px solid #4fc3f7;
+    padding-bottom: 10px;
+    margin-top: 0;
     text-align: center;
-    font-family: monospace;
+}
+
+/* Podcast */
+.player-musica {
+    text-align: center;
+}
+
+.titulo-musica {
+    color: #fff;
+}
+
+.info-episodio {
+    margin: 20px 0;
+    background-color: rgba(0, 0, 0, 0.3);
+    padding: 15px;
+    border-radius: 10px;
+}
+
+.galeria-videos {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    justify-content: center;
+}
+
+.video-container {
+    background-color: rgba(0, 0, 0, 0.4);
+    padding: 20px;
+    border-radius: 10px;
+    width: 100%;
+    max-width: 400px;
+    transition: transform 0.3s ease;
+}
+
+.video-container:hover {
+    transform: translateY(-5px);
+}
+
+.player-video {
+    width: 100%;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+}
+
+/* Formulário */
+.formulario {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+.rotulo {
+    font-weight: 500;
+    margin-bottom: -10px;
+}
+
+.campo-imagem {
+    padding: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 8px;
+    background-color: rgba(0, 0, 0, 0.3);
+    color: white;
+}
+
+.botao-enviar {
+    background: linear-gradient(135deg, #66bb6a 0%, #43a047 100%);
+    color: white;
+    padding: 12px;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    font-weight: bold;
+    margin-top: 10px;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(67, 160, 71, 0.4);
+}
+
+.botao-enviar:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(67, 160, 71, 0.6);
+}
+
+.mensagem-erro {
+    color: #ff5252;
+    font-size: 0.9em;
+    text-align: center;
+}
+
+.dica {
+    font-size: 0.8em;
+    color: #b0bec5;
+    text-align: center;
+}
+
+.frame-externo {
+    width: 100%;
+    height: 500px;
+    border: none;
+    border-radius: 10px;
+    margin-top: 15px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.5);
 }
 

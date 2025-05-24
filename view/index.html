@@ -1,74 +1,103 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home</title>
+    <title>Star Midia</title>
     <link rel="stylesheet" href="/styles/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="#">
 </head>
 
 <body>
 
-    <section class="Mp3">
-        <h2>🎧 Episódio 1 – Introdução ao HTML5</h2>
-        <audio controls preload="metadata">
-            <source src="episodio1.mp3" type="audio/mpeg">
-            <source src="episodio1.ogg" type="audio/ogg">
-            <p>Seu navegador não suporta áudio.
-                <a href="episodio1.mp3" download>Clique aqui para baixar o episódio</a>.
-            </p>
-        </audio>
-        <p>Descrição: Neste episódio, falamos sobre as novidades do HTML5 e seu impacto no desenvolvimento web.</p>
+    <canvas id="espaco"></canvas>
 
+    <header>
+        <nav class="menu-navegacao">
+            <ul>
+                <li><a href="#podcast">Músicas</a></li>
+                <li><a href="#videos">Vídeos</a></li>
+                <li><a href="#formulario">Formulário</a></li>
+                <li><a href="#iframe">Iframe</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="star-wars">
+        <img src="/assets/starwars.png" alt="star-wars-logo">
     </section>
 
-    <section class="Videos">
-
-        <h2>📺 Vídeo 1 – Introdução ao CSS</h2>
-        <video width="600" controls poster="thumbnail1.jpg">
-            <source src="css-intro.mp4" type="video/mp4">
-            <source src="css-intro.webm" type="video/webm">
-            <p>Seu navegador não suporta vídeos HTML5.
-                <a href="/assets/videoplayback.mp4">Baixe o vídeo</a>.
-            </p>
-        </video>
-        <p>Descrição: Aula introdutória sobre o uso de CSS em páginas HTML.</p>
-
-        <h2>📺 Vídeo 2 – HTML Semântico (com legendas)</h2>
-        <video width="600" controls poster="thumbnail2.jpg">
-            <source src="html-semantico.mp4" type="video/mp4">
-            <track src="legenda-pt.vtt" kind="subtitles" srclang="pt" label="Português">
-            <p>Seu navegador não suporta vídeos HTML5.
-                <a href="html-semantico.mp4">Baixe o vídeo</a>.
-            </p>
-        </video>
-        <p>Descrição: Entenda a importância do HTML semântico na estrutura de páginas acessíveis.</p>
-
+    <!--Reprodutor de Podcast-->
+    <section id="podcast" class="secao">
+        <h1 class="titulo-secao">🎧 Reprodutor de musica</h1>
+        <div class="player-musica">
+            <h2 class="titulo-musica">Link do Zap</h2>
+            <audio id="audio-podcast" controls>
+                <source src="/music/a-ultima-dança.mpeg" type="audio/mpeg">
+                Seu navegador não suporta áudio.
+            </audio>
+            <div class="info-episodio">
+                <h3 class="titulo-episodio">Musica muito foda</h3>
+                <p class="descricao-episodio">Feito por deuses</p>
+            </div>
+        </div>
     </section>
 
-    <section class="Formulario">
+    <!--Galeria de Vídeos-->
+    <section id="videos" class="secao">
+        <h1 class="titulo-secao">🎬 Galeria de Vídeos</h1>
+        <div class="galeria-videos">
+            <div class="video-container">
+                <h2 class="titulo-video">Anakin Morte</h2>
+                <video controls class="player-video">
+                    <source src="/videos/anakin.mp4" type="video/mp4">
+                    <track src="/legendas/[Portuguese (auto-generated)] Você era o escolhido! [DownSub.com].srt"
+                        kind="subtitles" srclang="pt" label="Português">
+                </video>
+                <p class="descricao-video">☠️☠️☠️☠️☠️☠️☠️</p>
+            </div>
+            <div class="video-container">
+                <h2 class="titulo-video">Intro Star Wars</h2>
+                <video controls class="player-video">
+                    <source src="/videos/intro-star-wars.mp4" type="video/mp4">
+                </video>
+                <p class="descricao-video">Para divertir o seu dia.</p>
+            </div>
+        </div>
+    </section>
 
-        <h2>📤 Envie sua Foto de Perfil</h2>
-        <form action="/upload" method="post" enctype="multipart/form-data">
-            <label for="foto">Selecione sua imagem:</label><br>
-            <input type="file" id="foto" name="foto" accept=".jpg, .jpeg, .png, .gif" required>
-            <p>Formatos aceitos: JPG, PNG, GIF. Tamanho máximo: 5MB.</p>
-            <button type="submit">Enviar</button>
+    <!--Formulário de Imagens-->
+    <section id="formulario" class="secao">
+        <h1 class="titulo-secao">📤 Enviar Imagem</h1>
+        <form id="formulario-imagem" class="formulario">
+            <label for="input-imagem" class="rotulo">Selecione uma imagem:</label>
+            <input type="file" id="input-imagem" accept="image/*" class="campo-imagem">
+            <p class="dica">Formatos: JPG, PNG ou GIF (até 2MB)</p>
+            <button type="submit" class="botao-enviar">Enviar</button>
+            <p id="mensagem-erro" class="mensagem-erro"></p>
         </form>
-
     </section>
 
-    <section class="PaginaI">
-
-        <h2>🌐 Localização da Empresa</h2>
-        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!..." width="600" height="450"
-            title="Mapa com a localização da empresa" loading="lazy" allowfullscreen
-            sandbox="allow-scripts allow-same-origin">
-        </iframe>
-
+    <!--Iframe-->
+    <section id="iframe" class="secao">
+        <h1 class="titulo-secao">🌐 Conteúdo Externo</h1>
+        <iframe src="https://youtu.be/7RFV5rsg2k4?si=5uZHQERhzNDJaXNf" title="Vídeo incorporado" class="frame-externo"
+            sandbox="allow-same-origin allow-scripts" allowfullscreen></iframe>
+        <p class="descricao-iframe">Exemplo de incorporação segura.</p>
     </section>
 
+    <section>
+        <img src="/assets/QUE A FORÇA NÃO ESTEJA COM VOCÊ.png" alt="Anakin" class="glow-blue">
+    </section>
+
+    <footer>
+        <!--botar-->
+    </footer>
+
+    <script src="/script/script.js"></script>
+    <script src="/script/space.js"></script>
 
 </body>
 
