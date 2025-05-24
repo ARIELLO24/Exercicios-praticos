@@ -1,201 +1,170 @@
+:root {
+  --star-wars-yellow: #f5d442;
+  --star-wars-yellow-alt: #ffe81f;
+  /* Alternativa mais acessível */
+  --crawl-duration: 90s;
+  /* Mais lento para ler confortavelmente */
+}
+
 body {
-    cursor: url('/assets/sabre-de-luz.png'), auto;
-    margin: 0;
-    padding: 0;
-    font-family: 'Orbitron', sans-serif;
-    overflow-x: hidden;
-    color: #fff;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #000;
+  font-family: 'Orbitron', sans-serif;
+  /* Fonte mais temática */
+  color: white;
+  -webkit-font-smoothing: antialiased;
+  /* Melhora a legibilidade */
 }
 
-#espaco {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: -1;
-    background: linear-gradient(to bottom, #000000 0%, #1a1a2e 100%);
+#star-wars-intro {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(ellipse at bottom, #1B2735 0%, #090A0F 100%);
+  z-index: 9999;
+  display: flex;
+  justify-content: center;
+  perspective: 300px;
+  overflow: hidden;
 }
 
-/* Menu de Navegação */
-.menu-navegacao {
-    background-color: rgba(0, 0, 0, 0.85);
-    backdrop-filter: blur(10px);
-    position: fixed;
-    width: 100%;
-    top: 0;
-    z-index: 1000;
-    box-shadow: 0 2px 15px rgba(255, 232, 31, 0.2);
-    border-bottom: 2px solid #ffe81f;
+#star-wars-content {
+  position: relative;
+  width: 90%;
+  max-width: 800px;
+  color: var(--star-wars-yellow-alt);
+  font-size: clamp(1.5rem, 5vw, 2.5rem);
+  /* Responsivo */
+  font-weight: 600;
+  text-align: center;
+  letter-spacing: 3px;
+  line-height: 1.4;
+  transform-origin: 50% 100%;
+  transform: perspective(300px) rotateX(20deg);
+  /* Ângulo mais suave */
 }
 
-.menu-navegacao ul {
-    display: flex;
-    justify-content: center;
-    list-style: none;
-    padding: 15px 0;
-    margin: 0;
+#star-wars-title {
+  text-align: center;
+  margin-bottom: 5vh;
+  /* Unidade relativa */
+  font-size: clamp(2rem, 8vw, 3.5rem);
+  text-transform: uppercase;
 }
 
-.menu-navegacao li {
-    margin: 0 20px;
+#star-wars-crawl {
+  position: relative;
+  animation: crawl var(--crawl-duration) linear forwards;
+  will-change: transform;
+  /* Otimização de performance */
 }
 
-.menu-navegacao a {
-    color: #ffe81f;
-    /* amarelo Star Wars */
-    text-decoration: none;
-    font-weight: 600;
-    font-size: 1.1rem;
-    font-family: 'Orbitron', sans-serif;
-    text-shadow: 0 0 5px #ffe81f, 0 0 10px #ffcf00;
-    transition: all 0.3s ease;
-    padding: 6px 12px;
-    border-radius: 5px;
+@keyframes crawl {
+  0% {
+    transform: perspective(300px) rotateX(20deg) translateY(100vh);
+  }
+
+  100% {
+    transform: perspective(300px) rotateX(20deg) translateY(-200%);
+  }
 }
 
-.menu-navegacao a:hover {
-    color: black;
-    background-color: #ffe81f;
-    box-shadow: 0 0 10px #ffe81f;
-    transform: scale(1.05);
+/* Sistema de estrelas melhorado */
+#stars {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
 }
 
-.star-wars {
-    display: flex;
-    justify-content: center;
-    padding: 2rem 0;
+.star {
+  position: absolute;
+  background-color: #fff;
+  border-radius: 50%;
+  will-change: transform, opacity;
+  /* Otimização */
+  animation:
+    twinkle 1.5s infinite ease-in-out alternate,
+    move 50s linear infinite;
+  /* Movimento adicional */
+  backface-visibility: hidden;
 }
 
-.star-wars img {
-    max-width: 80%;
-    height: auto;
+@keyframes twinkle {
+
+  0%,
+  100% {
+    opacity: 0.3;
+  }
+
+  50% {
+    opacity: 1;
+  }
 }
 
-.conteudo-principal {
-    padding-top: 70px;
-    padding-bottom: 50px;
+@keyframes move {
+  to {
+    transform: translateY(-100vh);
+  }
 }
 
-/* Seções */
-.secao {
-    background-color: rgba(30, 30, 60, 0.8);
-    backdrop-filter: blur(8px);
-    border-radius: 15px;
-    padding: 50px;
-    margin: 50px auto;
-    max-width: 900px;
-    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
-    border: 1px solid rgba(255, 255, 255, 0.1);
+/* Botão melhorado */
+#skip-button {
+  position: fixed;
+  bottom: 70px; /* Aumentei pra ficar acima do outro botão */
+  right: 20px;
+  padding: 12px 24px;
+  background: rgba(255, 216, 0, 0.25);
+  color: white;
+  border: 1px solid var(--star-wars-yellow);
+  border-radius: 4px;
+  cursor: pointer;
+  z-index: 10000;
+  font-family: inherit;
+  font-size: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  transition: all 0.3s ease;
 }
 
-.titulo-secao {
-    color: #4fc3f7;
-    border-bottom: 2px solid #4fc3f7;
-    padding-bottom: 10px;
-    margin-top: 0;
-    text-align: center;
+#skip-button:hover {
+  background: rgba(255, 216, 0, 0.4);
+  transform: scale(1.05);
 }
 
-/* Podcast */
-.player-musica {
-    text-align: center;
+#skip-button:active {
+  transform: scale(0.98);
 }
 
-.titulo-musica {
-    color: #fff;
+#playMusic {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  padding: 12px 24px;
+  background: rgba(255, 216, 0, 0.25);
+  color: white;
+  border: 1px solid var(--star-wars-yellow);
+  border-radius: 4px;
+  cursor: pointer;
+  z-index: 10000;
+  font-family: inherit;
+  font-size: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  transition: all 0.3s ease;
 }
 
-.info-episodio {
-    margin: 20px 0;
-    background-color: rgba(0, 0, 0, 0.3);
-    padding: 15px;
-    border-radius: 10px;
+#playMusic:hover {
+  background: rgba(255, 216, 0, 0.4);
+  transform: scale(1.05);
 }
 
-.galeria-videos {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 30px;
-    justify-content: center;
-}
-
-.video-container {
-    background-color: rgba(0, 0, 0, 0.4);
-    padding: 20px;
-    border-radius: 10px;
-    width: 100%;
-    max-width: 400px;
-    transition: transform 0.3s ease;
-}
-
-.video-container:hover {
-    transform: translateY(-5px);
-}
-
-.player-video {
-    width: 100%;
-    border-radius: 8px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
-}
-
-/* Formulário */
-.formulario {
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-    max-width: 500px;
-    margin: 0 auto;
-}
-
-.rotulo {
-    font-weight: 500;
-    margin-bottom: -10px;
-}
-
-.campo-imagem {
-    padding: 12px;
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    border-radius: 8px;
-    background-color: rgba(0, 0, 0, 0.3);
-    color: white;
-}
-
-.botao-enviar {
-    background: linear-gradient(135deg, #66bb6a 0%, #43a047 100%);
-    color: white;
-    padding: 12px;
-    border: none;
-    border-radius: 30px;
-    cursor: pointer;
-    font-weight: bold;
-    margin-top: 10px;
-    transition: all 0.3s ease;
-    box-shadow: 0 4px 15px rgba(67, 160, 71, 0.4);
-}
-
-.botao-enviar:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 6px 20px rgba(67, 160, 71, 0.6);
-}
-
-.mensagem-erro {
-    color: #ff5252;
-    font-size: 0.9em;
-    text-align: center;
-}
-
-.dica {
-    font-size: 0.8em;
-    color: #b0bec5;
-    text-align: center;
-}
-
-.frame-externo {
-    width: 100%;
-    height: 500px;
-    border: none;
-    border-radius: 10px;
-    margin-top: 15px;
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.5);
+#playMusic:active {
+  transform: scale(0.98);
 }

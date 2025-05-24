@@ -1,103 +1,65 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Star Midia</title>
+    <title>Seu Site com Intro Star Wars</title>
     <link rel="stylesheet" href="/styles/styles.css">
-    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="#">
 </head>
 
 <body>
 
-    <canvas id="espaco"></canvas>
+    <audio id="bg-music" src="/music/Star Wars Main Theme (Full).mp3" autoplay loop></audio>w
 
-    <header>
-        <nav class="menu-navegacao">
-            <ul>
-                <li><a href="#podcast">Músicas</a></li>
-                <li><a href="#videos">Vídeos</a></li>
-                <li><a href="#formulario">Formulário</a></li>
-                <li><a href="#iframe">Iframe</a></li>
-            </ul>
-        </nav>
-    </header>
+    <main>
 
-    <section class="star-wars">
-        <img src="/assets/starwars.png" alt="star-wars-logo">
-    </section>
+        <div id="star-wars-intro">
+            <div id="stars"></div>
+            <div id="star-wars-content">
+                <div id="star-wars-title">
+                    <p>EPISÓDIO IV</p>
+                    <p>O DESPERTAR DIGITAL</p>
+                </div>
+                <div id="star-wars-crawl">
+                    <p>Em uma galáxia não tão distante, onde a presença online se tornou essencial para o sucesso, surge
+                        uma nova esperança para o seu negócio.</p>
 
-    <!--Reprodutor de Podcast-->
-    <section id="podcast" class="secao">
-        <h1 class="titulo-secao">🎧 Reprodutor de musica</h1>
-        <div class="player-musica">
-            <h2 class="titulo-musica">Link do Zap</h2>
-            <audio id="audio-podcast" controls>
-                <source src="/music/a-ultima-dança.mpeg" type="audio/mpeg">
-                Seu navegador não suporta áudio.
-            </audio>
-            <div class="info-episodio">
-                <h3 class="titulo-episodio">Musica muito foda</h3>
-                <p class="descricao-episodio">Feito por deuses</p>
+                    <p>Enquanto impérios corporativos dominam o mercado com sites ultrapassados, uma equipe rebelde de
+                        criadores web se levanta para trazer inovação ao ecossistema digital.</p>
+
+                    <p>Com sabedoria em design, poder em desenvolvimento e a força em estratégias de marketing, estamos
+                        prontos para ajudar sua marca a conquistar seu espaço no vasto universo da internet.</p>
+
+                    <p>Não deixe seu negócio nas sombras do espaço digital. Juntos, podemos construir não apenas um
+                        site, mas uma experiência que cativará seus clientes como a Força.</p>
+
+                    <p>Que a presença online esteja com você. Sempre.</p>
+                </div>
             </div>
+            <button id="skip-button">Explorar Galáxia Digital</button>
+            <button id="playMusic" onclick="playMusic()">🎵</button>
         </div>
-    </section>
-
-    <!--Galeria de Vídeos-->
-    <section id="videos" class="secao">
-        <h1 class="titulo-secao">🎬 Galeria de Vídeos</h1>
-        <div class="galeria-videos">
-            <div class="video-container">
-                <h2 class="titulo-video">Anakin Morte</h2>
-                <video controls class="player-video">
-                    <source src="/videos/anakin.mp4" type="video/mp4">
-                    <track src="/legendas/[Portuguese (auto-generated)] Você era o escolhido! [DownSub.com].srt"
-                        kind="subtitles" srclang="pt" label="Português">
-                </video>
-                <p class="descricao-video">☠️☠️☠️☠️☠️☠️☠️</p>
-            </div>
-            <div class="video-container">
-                <h2 class="titulo-video">Intro Star Wars</h2>
-                <video controls class="player-video">
-                    <source src="/videos/intro-star-wars.mp4" type="video/mp4">
-                </video>
-                <p class="descricao-video">Para divertir o seu dia.</p>
-            </div>
+        <div id="main-content">
+            <a href="galaxia.html"></a>
         </div>
-    </section>
 
-    <!--Formulário de Imagens-->
-    <section id="formulario" class="secao">
-        <h1 class="titulo-secao">📤 Enviar Imagem</h1>
-        <form id="formulario-imagem" class="formulario">
-            <label for="input-imagem" class="rotulo">Selecione uma imagem:</label>
-            <input type="file" id="input-imagem" accept="image/*" class="campo-imagem">
-            <p class="dica">Formatos: JPG, PNG ou GIF (até 2MB)</p>
-            <button type="submit" class="botao-enviar">Enviar</button>
-            <p id="mensagem-erro" class="mensagem-erro"></p>
-        </form>
-    </section>
+    </main>
 
-    <!--Iframe-->
-    <section id="iframe" class="secao">
-        <h1 class="titulo-secao">🌐 Conteúdo Externo</h1>
-        <iframe src="https://www.youtube.com/embed/229zEk3IvE0" title="Vídeo incorporado" class="frame-externo"
-            sandbox="allow-same-origin allow-scripts" allowfullscreen></iframe>
-        <p class="descricao-iframe">Exemplo de incorporação segura.</p>
-    </section>
+    <script>
+        function playMusic() {
+            const music = document.getElementById("bg-music");
+            music.play();
+        }
 
-    <section>
-        <img src="/assets/QUE A FORÇA NÃO ESTEJA COM VOCÊ.png" alt="Anakin" class="glow-blue">
-    </section>
 
-    <footer>
-        <!--botar-->
-    </footer>
+        function stopMusic() {
+            const music = document.getElementById("");
+            music.stopMusic();
+        }
+    </script>
 
-    <script src="/script/script.js"></script>
-    <script src="/script/space.js"></script>
+    <script src="/script/index.js"></script>
 
 </body>
 

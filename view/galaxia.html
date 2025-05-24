@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Star Midia</title>
+    <link rel="stylesheet" href="/styles/galaxia.css">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="#">
+</head>
+
+<body>
+
+    <canvas id="espaco"></canvas>
+
+    <header>
+        <nav class="menu-navegacao">
+            <ul>
+                <li><a href="#podcast">Músicas</a></li>
+                <li><a href="#videos">Vídeos</a></li>
+                <li><a href="#formulario">Formulário</a></li>
+                <li><a href="#iframe">Iframe</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="star-wars">
+        <img src="/assets/starwars.png" alt="star-wars-logo">
+    </section>
+
+    <!--Reprodutor de Podcast-->
+    <section id="podcast" class="secao">
+        <h1 class="titulo-secao">🎧 Reprodutor de musica</h1>
+        <div class="player-musica">
+            <h2 class="titulo-musica">Link do Zap</h2>
+            <audio id="audio-podcast" controls>
+                <source src="/music/a-ultima-dança.mpeg" type="audio/mpeg">
+                Seu navegador não suporta áudio.
+            </audio>
+            <div class="info-episodio">
+                <h3 class="titulo-episodio">Musica muito foda</h3>
+                <p class="descricao-episodio">Feito por deuses</p>
+            </div>
+        </div>
+    </section>
+
+    <!--Galeria de Vídeos-->
+    <section id="videos" class="secao">
+        <h1 class="titulo-secao">🎬 Galeria de Vídeos</h1>
+        <div class="galeria-videos">
+            <div class="video-container">
+                <h2 class="titulo-video">Morte de Anakin Skywalker</h2>
+                <video controls class="player-video">
+                    <source src="/videos/anakin.mp4" type="video/mp4">
+                    <track src="/legendas/[Portuguese (auto-generated)] Você era o escolhido! [DownSub.com].srt"
+                        kind="subtitles" srclang="pt" label="Português">
+                </video>
+                <p class="descricao-video">☠️☠️☠️☠️☠️☠️☠️</p>
+            </div>
+            <div class="video-container">
+                <h2 class="titulo-video">Intro Star Wars</h2>
+                <video controls class="player-video">
+                    <source src="/videos/intro-star-wars.mp4" type="video/mp4">
+                </video>
+                <p class="descricao-video">Para divertir o seu dia.</p>
+            </div>
+        </div>
+    </section>
+
+    <!--Formulário de Imagens-->
+    <section id="formulario" class="secao">
+        <h1 class="titulo-secao">📤 Enviar Imagem</h1>
+        <form id="formulario-imagem" class="formulario">
+            <label for="input-imagem" class="rotulo">Selecione uma imagem:</label>
+            <input type="file" id="input-imagem" accept="image/*" class="campo-imagem">
+            <p class="dica">Formatos: JPG, PNG ou GIF (até 2MB)</p>
+            <button type="submit" class="botao-enviar">Enviar</button>
+            <p id="mensagem-erro" class="mensagem-erro"></p>
+        </form>
+    </section>
+
+    <!--Iframe-->
+    <section id="iframe" class="secao">
+        <h1 class="titulo-secao">🌐 Conteúdo Externo</h1>
+        <iframe src="https://www.youtube.com/embed/229zEk3IvE0" title="Vídeo incorporado" class="frame-externo"
+            sandbox="allow-same-origin allow-scripts" allowfullscreen></iframe>
+        <p class="descricao-iframe">Exemplo de incorporação segura.</p>
+    </section>
+
+    <section>
+        <img src="/assets/QUE A FORÇA NÃO ESTEJA COM VOCÊ.png" alt="Anakin" class="glow-blue">
+    </section>
+
+    <footer>
+        <!--botar-->
+    </footer>
+
+    <script src="/script/script.js"></script>
+    <script src="/script/space.js"></script>
+
+</body>
+
+</html>
